@@ -1,3 +1,8 @@
+
+
+<img width="1792" height="592" alt="Gemini_Generated_Image_wgddalwgddalwgdd" src="https://github.com/user-attachments/assets/dbffc2e4-47c8-430d-8c8c-5bc8b9c17a4d" />
+
+
 # Hey, I'm Lingraj 👋
 
 🚀 AI Engineer · Full-Stack Software Engineer · LLM Systems Builder
