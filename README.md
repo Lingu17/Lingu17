@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/profile-hero.svg?v=lm1" alt="Lingraj Malipatil - Engineering with perspective, illustrated by a shaded parametric knot" width="100%" />
+  <img src="assets/profile-hero.svg?v=perspective1" alt="Lingraj Malipatil - Engineering with perspective, illustrated by a shaded parametric knot" width="100%" />
 </p>
 
 <p align="center">
