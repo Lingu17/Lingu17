@@ -17,11 +17,11 @@ def main():
     try:
         with sync_playwright() as p:
             browser=p.chromium.launch(**options)
-            page=browser.new_page(viewport={'width':1600,'height':800},device_scale_factor=1)
+            page=browser.new_page(viewport={'width':1600,'height':900},device_scale_factor=1)
             for name in ['hero','codeforge','vericore','intervexa']:
                 page.goto(f'http://127.0.0.1:{server.server_address[1]}/index.html?project={name}')
                 page.wait_for_function('window.ready===true',timeout=60000)
-                page.screenshot(path=str(args.output/f'{name}-engineered-3d.png'))
+                page.locator('#sheet').screenshot(path=str(args.output/f'{name}-project-model.png'))
                 print('Rendered',name)
             browser.close()
     finally:server.shutdown();server.server_close()
