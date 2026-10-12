@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/hero-project-model.png" alt="Three distinct 3D models: CodeForge source-length repository layers and hybrid retrieval, Vericore cutaway documents and evidence gating, and Intervexa directed source imports with selected revision paths." width="100%" />
+  <img src="assets/hero-project-model.png" alt="Six independent 3D project models: CodeForge repository retrieval, Vericore document evidence, Intervexa source-aware changes, Nexvio video analysis, EchoVault browser-local chat history and Smart Resume structured suggestions." width="100%" />
 </p>
 
 ## Hi, I’m Lingraj.
