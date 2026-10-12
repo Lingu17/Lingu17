@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}html,body{margin:0}body{background:#f5f8fc;color:#071827;font-family:Arial,Helvetica,sans-serif}.sheet{position:relative;width:1600px;height:800px;overflow:hidden;border:1px solid #d6e0e9}.heading{position:absolute;top:47px;left:52px;z-index:2}.eyebrow{font:19px Consolas,monospace;letter-spacing:1.5px;color:#71849a}.heading h1{font-size:62px;letter-spacing:-2px;margin:22px 0 12px;font-weight:600}.heading p{font-size:25px;margin:0;color:#71849a}.canvas{position:absolute;left:0;top:170px;width:1600px;height:575px}.bottom{position:absolute;left:52px;right:52px;bottom:33px;padding-top:20px;border-top:1px solid #d6e0e9;font:20px Consolas,monospace;color:#71849a}.bottom strong{color:#0866f5;font-weight:400}.hero .heading h1{font-size:57px}.models{position:absolute;top:240px;left:36px;right:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.model{position:relative}.model h2{font-size:27px;margin:0 0 4px 16px;font-weight:600}.model canvas{width:490px;height:390px;display:block}.model p{font-size:21px;margin:22px 0 0 16px;color:#71849a}.model .num{font:18px Consolas,monospace;color:#0866f5;margin-right:16px}
+</style></head><body><div class="sheet" id="sheet"></div><script type="module">
+import {draw} from './model.js';
+const kinds={codeforge:{title:'CodeForge AI',line:'Repository intelligence with a source trail.',foot:'Lexical + vector retrieval · bounded context · commit-linked citations'},vericore:{title:'Vericore',line:'Document answers that stay close to their evidence.',foot:'ChromaDB · cosine + lexical coverage · answer or NOT_FOUND'},intervexa:{title:'Intervexa',line:'Pinned source, selected changes, inspectable findings.',foot:'Python declarations + imports · PR comparison · static evidence'}};
+const kind=new URLSearchParams(location.search).get('project')||'hero',sheet=document.getElementById('sheet');
+if(kind==='hero'){
+  sheet.classList.add('hero');sheet.innerHTML='<div class="heading"><div class="eyebrow">LINGRAJ MALIPATIL / AI & FULL-STACK ENGINEERING</div><h1>Built to answer. Designed to be inspected.</h1><p>Repository intelligence · document retrieval · source-aware developer tools</p></div><div class="models"></div><div class="bottom">THREE INDEPENDENT PRODUCTS <span style="float:right">PYTHON / TYPESCRIPT</span></div>';
+  const captions={codeforge:'Source → retrieval → citations',vericore:'Documents → evidence → answer',intervexa:'Structure → changes → findings'};
+  const promises=Object.entries(kinds).map(async([key,data],i)=>{
+    const node=document.createElement('div');node.className='model';node.innerHTML=`<h2><span class="num">0${i+1}</span>${data.title}</h2><canvas></canvas><p>${captions[key]}</p>`;sheet.querySelector('.models').append(node);await draw(node.querySelector('canvas'),key,true);
+  });await Promise.all(promises);
+}else{
+  const d=kinds[kind];sheet.innerHTML=`<div class="heading"><div class="eyebrow">SELECTED PROJECT / ${kind.toUpperCase()}</div><h1>${d.title}</h1><p>${d.line}</p></div><canvas class="canvas"></canvas><div class="bottom">${d.foot}</div>`;
+  await draw(sheet.querySelector('canvas'),kind);
+}
+window.ready=true;
+</script></body></html>
