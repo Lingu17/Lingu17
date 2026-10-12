@@ -13,11 +13,11 @@ python -m playwright install chromium
 python render.py
 ```
 
-The script uses a local Edge installation when present, otherwise Playwright Chromium. An explicit browser executable can be supplied with `--browser`. Four 1600 × 800 PNGs are exported to the root `assets/` directory. Use `--output` to export to a different directory.
+The script uses a local Edge installation when present, otherwise Playwright Chromium. An explicit browser executable can be supplied with `--browser`. Three 1600 × 900 project PNGs and a 1600 × 970 hero are exported to the root `assets/` directory. Use `--output` to export to a different directory.
 
 ## Edit
 
-- `model.js`: source-file leaves, passages, directory containment, retrieval paths, document index, evidence gate, declarations, selected PR paths, camera and lighting.
+- `models.js`: data-derived repository relief, curved cutaway document pages, directed module-import graph, selected revision paths, camera and lighting.
 - `index.html`: deterministic typography, hero/project layout and verified workflow labels.
 - `render.py`: local-only rendering and PNG export.
 

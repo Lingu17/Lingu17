@@ -1,6 +1,6 @@
-# Portfolio artwork and source verification
+# Project models and source verification
 
-Source inspected October 12, 2026. The current illustrations are constructed with original Three.js geometry, code-defined relationships and deterministic labels, then exported as static PNGs. They are conceptual models, not screenshots or recorded query results. No image-generation model was used for this version.
+This revision gives each project its own geometry and composition. Models are authored in Three.js and rendered to static PNGs; no generated raster artwork is used. The models are explanatory software representations, not recorded queries, PR results or hardware.
 
 | Visual | Actual project | Verified code or workflow |
 |---|---|---|
@@ -15,24 +15,31 @@ Source inspected October 12, 2026. The current illustrations are constructed wit
 - **ai-chat-app-saved-history:** Chat messages load from and save to localStorage. api/chat.js forwards messages to a model provider. The UI does not use the empty Convex messages module for history. [Source](https://github.com/Lingu17/ai-chat-app-saved-history/blob/8f3a99925efbe6a2b97f6089c52cd1c85b7295f5/src/App.jsx).
 - **Smart-Resume-AI:** PDF/DOCX text extraction and Groq JSON output. Suggestions are model-generated; no validated hiring or ATS performance is claimed. [Source](https://github.com/Lingu17/Smart-Resume-AI/blob/fc24799181293745307db81cb2eb676942a4f574/resume_parser.py).
 
-## What each object means
+## Distinct visual systems
 
-- **CodeForge:** the directory marker and source leaves use actual `backend/main.py` and `backend/rag.py` as illustrative inputs. Source leaves become line-aware chunk stacks. Blue and cyan retrieval routes represent vector and lexical results, which converge on bounded source evidence for generation. The dashed route represents commit/file/line citation metadata.
-- **Vericore:** the PDF/TXT stack represents parsed documents; passage strips carry page-aware context. The circular layers represent a ChromaDB document index. Cosine similarity and lexical coverage are two scoring signals applied to candidates, not two invented databases. The evidence gate branches to generation with sources or NOT_FOUND without an LLM call.
-- **Intervexa:** actual illustrative `backend/app/intelligence.py` and `github.py` file leaves are connected by a directed import edge. `intelligence.py` declares `graph()`. PR A/B are conceptual selected-revision labels, not real pull-request identifiers; source-change strips lead to advisory findings. Dynamic calls and execution outcomes are not asserted.
-- White source strokes are schematic lines, not fabricated code, output or evidence. Shadows, file thickness and document layers supply depth; no server hardware, orchestration agents, random props or extra components are implied.
+| Model | Form and composition | Actual implementation represented |
+|---|---|---|
+| CodeForge AI | Dark source-length repository relief; file strata, two retrieval ribbons, merged chunk evidence and an answer endpoint. Text sits on the left. | Real backend files become line-aware chunks. The same repository-scoped chunk collection supplies vector/lexical results; reciprocal-rank fusion provides bounded, attributed context. The two ribbons are result paths, not separate databases or source partitions. A dashed citation path represents commit/file/line references. |
+| Vericore | Light cutaway book with genuinely curved page geometry, highlighted passage extraction, a layered passage index, and a branching gate. Text sits on the right. | PDF/TXT extraction preserves document/page/section metadata. ChromaDB returns candidates scored by cosine plus lexical coverage. Evidence passing the gate reaches generation; absent evidence returns NOT_FOUND without calling the LLM. The document has schematic strokes, not fabricated passage content. |
+| Intervexa | Dark spatial directed-import graph; hexagonal module nodes and a circular declaration node, followed by two selected revision ribbons and an advisory endpoint. | intelligence.py directly imports github.py, config.py, db.py, models.py, providers.py and security.py. It declares graph(). Conceptual PR A/B paths illustrate supported comparison categories: signatures and response keys. Edges do not claim resolved calls, actual PRs or proven defects. |
 
-## Implementation
+## Data-derived file model
 
-The reproducible model source is in `tools/portfolio-3d/`: geometry, materials, labels, camera, lighting, render wrapper and pinned dependency files. README rendering uses static images only. GitHub does not execute Three.js or JavaScript. Model source uses plain matte surfaces and restrained blue/cyan data paths without synthetic photographic textures.
+Inspected CodeForge source counts: `main.py` 962 lines; `scanner.py` 1119; `embedding.py` 78; `rag.py` 39. The rendered heights use `0.5 + 2.35 * sqrt(lines / 1119)`. Heights express source length only, not importance, quality, latency, risk or any benchmark. These real files are illustrative repository inputs, not a claim of a recorded self-analysis run.
 
-## Validation
+## Reproduce and edit
 
-- All four PNGs decode successfully; the README resolves all four image paths.
-- All rendered scenes were inspected for text, source semantics and cropping.
-- The Markdown preview loads images and has no horizontal overflow at 390 and 768 pixels.
-- Repository/source URLs are preserved from the prior check, where all 14 GitHub URLs returned HTTP 200. LinkedIn blocked automated checking; its original URL is retained.
-- No project application code changed and no application test totals or performance claims are added.
+`tools/portfolio-3d/models.js` defines all three different models, source-count data, relationships, materials, camera positions and lighting. `index.html` defines their separate editorial layouts and the hero. `render.py` builds the static assets using a local browser. The dependency lockfile pins Three.js. Only PNG assets are used by the GitHub README; no script runs there.
+
+## Completed checks
+
+- Actual source counts match the model's constants.
+- AST inspection confirms all six depicted imports and the graph declaration.
+- All four PNGs decode, and the Markdown resolves all four relative asset paths.
+- Models and text were visually inspected; a hero heading collision was repaired.
+- The local Markdown preview loads all images and has no horizontal overflow at 390 and 768 pixels.
+- GitHub repository/source links are preserved from the earlier HTTP checks. LinkedIn blocked automated checking; its original contact URL remains.
+- No project application code was changed, no application test count was added, and no generated evidence or execution result is claimed.
 
 ## Inspected revisions
 

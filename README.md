@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/hero-engineered-3d.png" alt="Three independent code-rendered 3D engineering models: CodeForge repository retrieval and citations, Vericore documents and evidence gating, and Intervexa source relationships and advisory changes." width="100%" />
+  <img src="assets/hero-project-model.png" alt="Three distinct 3D models: CodeForge source-length repository layers and hybrid retrieval, Vericore cutaway documents and evidence gating, and Intervexa directed source imports with selected revision paths." width="100%" />
 </p>
 
 ## Hi, I’m Lingraj.
@@ -12,7 +12,7 @@ I build AI applications and full-stack tools that make complex information easie
 
 ### CodeForge AI
 
-[![CodeForge AI: actual example source files become line-aware chunks; vector and lexical retrieval converge on source evidence for an answer with commit-linked citations.](assets/codeforge-engineered-3d.png)](https://github.com/Lingu17/codeforage-ai)
+[![CodeForge AI: volumes for main.py, scanner.py, embedding.py and rag.py derive their heights from inspected source lengths; vector and lexical paths converge on attributed evidence and an answer.](assets/codeforge-project-model.png)](https://github.com/Lingu17/codeforage-ai)
 
 Ask questions about a GitHub repository and follow the answer back to its source. Vector and lexical results are merged with reciprocal-rank fusion, then supplied to the model as bounded, attributed context.
 
@@ -22,7 +22,7 @@ I built line-aware chunking, cached embeddings, persisted scan stages and stream
 
 ### Vericore
 
-[![Vericore: layered PDF/TXT pages become ChromaDB passages; a cosine and lexical-coverage gate chooses evidence-backed generation or NOT_FOUND without an LLM call.](assets/vericore-engineered-3d.png)](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence)
+[![Vericore: an open cutaway PDF/TXT document releases page-aware passages into a ChromaDB index, with evidence-backed generation or NOT_FOUND without an LLM call.](assets/vericore-project-model.png)](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence)
 
 Document Q&A with an inspectable evidence trail. PDF/TXT text is chunked with page and section metadata, indexed in ChromaDB, and retrieved using semantic similarity plus lexical coverage.
 
@@ -34,7 +34,7 @@ The retrieval gate filters unsupported queries before generation. No qualifying 
 
 ### Intervexa
 
-[![Intervexa: backend/app contains intelligence.py and github.py; the directed import and graph declaration are shown beside conceptual selected-PR paths leading to advisory findings.](assets/intervexa-engineered-3d.png)](https://github.com/Lingu17/intervexa)
+[![Intervexa: intelligence.py has directed imports to six verified modules and declares graph(); conceptual PR A/B paths compare signatures and response keys before source-referenced advisory findings.](assets/intervexa-project-model.png)](https://github.com/Lingu17/intervexa)
 
 Explore pinned repository source and inspect how selected pull requests may interact. The workbench shows Python declarations and module-path import matches, with 3D and 2D views.
 
