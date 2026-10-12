@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/hero-project-model.png" alt="Six independent 3D project models: CodeForge repository retrieval, Vericore document evidence, Intervexa source-aware changes, Nexvio video analysis, EchoVault browser-local chat history and Smart Resume structured suggestions." width="100%" />
+  <img src="assets/hero-project-model.png" alt="Lingraj Malipatil — AI Engineer and Full-Stack Software Engineer. A custom 3D software workbench with layered code windows, connected nodes and a software stack." width="100%" />
 </p>
 
 ## Hi, I’m Lingraj.
