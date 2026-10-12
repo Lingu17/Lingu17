@@ -47,4 +47,3 @@ The profile README references the four rendered assets in assets/. Artwork was c
 - Generated artwork was visually inspected; hero invented filenames were replaced with entity labels and The Intervexa import connector was changed to a neutral line to avoid implying a bidirectional dependency.
 - Markdown renders locally; images load at 390 and 768 px without horizontal overflow. Desktop and mobile previews were inspected. This is not a screenshot of GitHub rendering.
 - Repository/source links are preserved from the earlier audit, where all 14 GitHub URLs returned HTTP 200. LinkedIn blocked automated verification (HTTP 999); its original URL remains.
-
