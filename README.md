@@ -1,117 +1,66 @@
 <p align="center">
-  <img src="assets/profile-hero.svg?v=perspective1" alt="Lingraj Malipatil - Engineering with perspective, illustrated by a shaded parametric knot" width="100%" />
+  <img src="assets/profile-hero-3d.png" alt="Lingraj Malipatil’s three independent engineering workbenches: CodeForge repository retrieval, Vericore document evidence, and Intervexa source-aware PR findings." width="100%" />
 </p>
 
-<p align="center">
-  <strong>AI &amp; full-stack software engineering</strong><br />
-  Repository intelligence · grounded retrieval · developer tools · product interfaces
-</p>
+# AI engineering with a source trail
 
-<p align="center">
-  <a href="#selected-work">Selected work</a> ·
-  <a href="#engineering-focus">Engineering focus</a> ·
-  <a href="#repository-directory">All repositories</a> ·
-  <a href="https://www.linkedin.com/in/lingraj-malipatil-a2735a241/">LinkedIn</a>
-</p>
+I’m **Lingraj Malipatil**. I build tools that make complex information easier to inspect: repository answers with source citations, document Q&A with evidence trails, and developer tools for understanding code changes. I work across React/TypeScript interfaces, Python APIs and retrieval systems.
 
-## Software that makes the complex legible
+[Featured projects](#three-products-three-engineering-problems) · [Engineering strengths](#engineering-strengths) · [LinkedIn](https://www.linkedin.com/in/lingraj-malipatil-a2735a241/)
 
-I'm **Lingraj Malipatil**, a developer in India building AI applications and full-stack tools. My recent projects focus on a practical question: **how can software make complex information easier to understand—and make its answers easier to verify?**
+## Three products. Three engineering problems.
 
-I work across interfaces, Python APIs, retrieval workflows, databases and deployment. Below are three projects that best show that work, followed by the full public repository directory.
+### CodeForge AI — ask a repository, follow the sources
 
-## Selected work
+[![CodeForge AI: scanned repository files become chunks; vector and lexical retrieval supply an LLM answer whose citations return to source lines at the scanned commit.](assets/codeforge-3d.png)](https://github.com/Lingu17/codeforage-ai)
 
-<a href="https://github.com/Lingu17/intervexa"><img src="assets/intervexa.svg" alt="Intervexa — pinned code, 3D architecture and advisory pull-request interaction analysis" width="100%" /></a>
+*Repository structure → hybrid retrieval → cited answers.*
 
-### 01 / Intervexa - seeing the whole system
+Import a GitHub repository and ask questions against its source. **Vector and lexical retrieval** are fused into bounded context; answers expose file and line references linked to the scanned commit.
 
-Explore revision-pinned code, inspect Python declarations and imports in a 3D workbench, and analyze how selected pull requests may interact.
+**Engineering detail:** line-aware chunking, cached embeddings, persisted scan stages and streaming answers.
 
-**Engineering to inspect:** source-aware graph traversal and 2D fallback; selected-repository GitHub App access; persistent analysis queues; immutable revisions; clear separation between static hypotheses and execution evidence.
+[Repository](https://github.com/Lingu17/codeforage-ai) · [Retrieval code](https://github.com/Lingu17/codeforage-ai/blob/main/backend/rag.py) · [Scanning pipeline](https://github.com/Lingu17/codeforage-ai/blob/main/backend/scanner.py)
 
-**Verified in the redesign release:** 185 backend tests, 14 browser tests, production build and GitHub CI. A real two-PR GitHub fixture exercised discovery, synchronization, source search and analysis. Hosted isolated execution remains unconfigured; static findings are advisory.
+### Vericore — document answers with an evidence trail
 
-[Source & product tour](https://github.com/Lingu17/intervexa) · [Live application](https://intervexa-web.onrender.com/) · [Engineering report](https://github.com/Lingu17/intervexa/blob/main/docs/premium-redesign-report.md)
+[![Vericore: PDF and TXT extraction feeds ChromaDB and hybrid retrieval. Evidence passing the gate supports an LLM answer; no evidence returns NOT_FOUND without calling the LLM.](assets/vericore-3d.png)](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence)
 
-<a href="https://github.com/Lingu17/codeforage-ai"><img src="assets/codeforge.svg" alt="CodeForge AI — repository imports, dependency exploration and answers with source citations" width="100%" /></a>
+*Document layers → retrieved passages → answer or explicit unknown.*
 
-### 02 / CodeForge AI - context with a source trail
+Upload PDF or TXT documents, ask questions, and inspect the retrieved passages with document, page and section references. **ChromaDB similarity search plus lexical coverage** selects the evidence supplied to the answer.
 
-Turn repository source into navigable context: import a repository, inspect dependencies and source findings, and ask questions with commit-linked citations.
-
-A developer asks a question. Retrieval finds relevant source. The answer leads back to a recorded commit.
-
-The implementation combines **vector and lexical search**, persisted scan stages and streaming answers. Database authorization, bounded diff review and distinct provider/permission failures make that workflow inspectable.
-
-[Source & architecture](https://github.com/Lingu17/codeforage-ai) · [Retrieval implementation](https://github.com/Lingu17/codeforage-ai/blob/main/backend/rag.py) · [Database isolation checks](https://github.com/Lingu17/codeforage-ai/blob/main/backend/tests/rls_isolation.sql)
-
-<a href="https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence"><img src="assets/vericore.svg" alt="Vericore — evidence-first document intelligence with grounded Q&A and inspectable sources" width="100%" /></a>
-
-### 03 / Vericore - answers you can inspect
-
-Upload PDF or text documents, retrieve relevant material and inspect the evidence behind a grounded answer. Unsupported answers are distinguished from information available in the source documents.
+**Engineering detail:** relevance gating, passage deduplication and adaptive context sizing. If no evidence passes the gate, the API skips the LLM and returns:
 
 > Information not available in the uploaded documents.
 
-That documented fallback matters: an answer should stay within its evidence. The React/TypeScript workspace exposes source-document and page references, while FastAPI and ChromaDB support extraction and retrieval.
+[Repository](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence) · [Retrieval code](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence/blob/main/backend/app/services/retriever.py) · [Evidence gate](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence/blob/main/backend/app/api/chat.py)
 
-[Source & walkthrough](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence)
+### Intervexa — inspect structure and potential change interactions
 
-## Engineering focus
+[![Intervexa: revision-pinned files connect to Python declarations and import relationships; selected PR changes lead to source-referenced advisory findings.](assets/intervexa-3d.png)](https://github.com/Lingu17/intervexa)
 
-<img src="assets/engineering-system.svg" alt="An illustrated engineering process: understand the workflow, design, build, verify and refine." width="100%" />
+*Source relationships → selected changes → advisory findings.*
 
-**Product interfaces** — React, Next.js and TypeScript; responsive navigation, source viewers and useful visualizations.
+Explore revision-pinned repository structure and Python declarations/imports in a 3D workbench with a 2D fallback. Compare selected PRs for overlapping files and identifiers, signature changes and removed response keys.
 
-**Backend & data** — Python, FastAPI, PostgreSQL, pgvector and ChromaDB; persistence, authorization and durable work.
+**Engineering detail:** source-referenced findings distinguish static evidence from execution results. Import edges use module-path matching; calls remain unresolved. Findings are advisory, and isolated execution requires a configured runner.
 
-**Applied AI** — hybrid retrieval, embeddings, grounded answers and provider integration.
+[Repository](https://github.com/Lingu17/intervexa) · [Source graph](https://github.com/Lingu17/intervexa/blob/main/backend/app/intelligence.py) · [Change analysis](https://github.com/Lingu17/intervexa/blob/main/backend/app/analyzer.py)
 
-**Verification** — Pytest, Playwright, type checking, lint, CI and documented test boundaries. Additional projects explore Kotlin, NLP and recommendation models.
+## Engineering strengths
 
-I value **inspectable evidence, explicit limits and readable interfaces**. A source reference is more useful than an unsupported claim; a clear recovery state is more useful than a silent failure.
+- **Retrieval design:** rank fusion for code; semantic similarity with lexical coverage and relevance gates for documents.
+- **Source traceability:** commit-linked code references, page-aware evidence and revision-pinned analysis.
+- **Full-stack workflows:** React/TypeScript workspaces backed by Python APIs and persistent data.
+- **Reliability and verification:** explicit failure states, bounded context and source-level tests for retrieval, API behavior and analysis boundaries.
 
-## Repository directory
+## More work
 
-A directory of my public projects, updated October 11, 2026. It includes product applications, focused machine-learning work and smaller experiments.
+- [Nexvio](https://github.com/Lingu17/nexvio) — interview-video and posture-analysis services with queued processing and task-status endpoints.
+- [EchoVault AI](https://github.com/Lingu17/ai-chat-app-saved-history) — React chat UI with browser-local conversation history and a serverless model API route.
+- [Smart Resume AI](https://github.com/Lingu17/Smart-Resume-AI) — Flask workflow extracting PDF/DOCX resume text and requesting structured skills, role suggestions and improvement feedback from Groq.
 
-### AI & developer platforms
+## Contact
 
-- [Intervexa](https://github.com/Lingu17/intervexa) — repository architecture and PR interaction evidence.
-- [CodeForge AI](https://github.com/Lingu17/codeforage-ai) — repository intelligence and source-grounded retrieval.
-- [Vericore](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence) — evidence-first document Q&A.
-- [Nexvio](https://github.com/Lingu17/nexvio) — AI interview preparation and career intelligence.
-- [EchoVault AI](https://github.com/Lingu17/ai-chat-app-saved-history) — AI chat with persisted conversation history.
-- [Smart Resume AI](https://github.com/Lingu17/Smart-Resume-AI) — resume analysis and improvement suggestions.
-
-### Applications & dashboards
-
-- [Shishu-Sneh](https://github.com/Lingu17/Shishu-Sneh) — Kotlin Android baby-care tracking and reminders.
-- [Tourist System](https://github.com/Lingu17/tourist-system) — destination exploration and travel planning.
-- [Sales Analytics](https://github.com/Lingu17/Sales-Analytics) — React/TypeScript dashboard with explicitly simulated sales data.
-- [Budget Tracker](https://github.com/Lingu17/Buget-tracker-app) — income, expenses, categories and financial summaries.
-
-### Machine-learning studies
-
-- [Emotion detection from text](https://github.com/Lingu17/Emotion-detiction-using-Text) — NLP emotion classification.
-- [Crop Recommendation](https://github.com/Lingu17/Crop-recommendation-using-machine-learing) — recommendations from soil and environmental inputs.
-
-<details>
-<summary><strong>Profile infrastructure and early experiments</strong></summary>
-
-- [Lingu17](https://github.com/Lingu17/Lingu17) — this profile README and custom SVG portfolio artwork.
-- [LinkedIn automation POC](https://github.com/Lingu17/linkedin-automation-poc) — proof-of-concept repository; currently minimal documentation.
-- [datacom](https://github.com/Lingu17/datacom) — repository with minimal documentation; no unverified feature claims.
-
-</details>
-
-## Let's talk engineering
-
-For a quick technical review, start with **Intervexa's engineering report**, **CodeForge AI's retrieval implementation**, or **Vericore's evidence workflow**. They show the decisions behind the interfaces, not just the screenshots.
-
-[Connect on LinkedIn](https://www.linkedin.com/in/lingraj-malipatil-a2735a241/) · [Browse my repositories](https://github.com/Lingu17?tab=repositories)
-
----
-
-<p align="center"><strong>Build something useful. Make the evidence visible.</strong><br /><sub>Custom sculptural and editorial SVG artwork · Designed to stay crisp on any screen.</sub></p>
+[LinkedIn](https://www.linkedin.com/in/lingraj-malipatil-a2735a241/) · [GitHub](https://github.com/Lingu17) · [All repositories](https://github.com/Lingu17?tab=repositories)
