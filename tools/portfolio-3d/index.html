@@ -13,9 +13,7 @@ await draw(sheet.querySelector('canvas'),k);
 sheet.classList.add('inter');sheet.innerHTML='<canvas></canvas><div class="copy"><div class="tag">03 / INTERVEXA</div><h1>Read the graph.<br>Follow the change.</h1><div class="rule"></div><p>Python declarations and imports meet selected revision comparisons.</p><div class="details">PINNED SOURCE<br>SHARED FILES / IDENTIFIERS<br>SIGNATURE / RESPONSE KEYS</div><p style="font-size:18px;color:#71849a">Findings are advisory.<br>Execution requires configuration.</p></div><div class="foot">INTERVEXA <span style="float:right">Source relationships, not a resolved call graph.</span></div>';
 await draw(sheet.querySelector('canvas'),k);
 }else{
-sheet.classList.add('hero');sheet.innerHTML='<div class="top"><div class="tag">LINGRAJ MALIPATIL / AI & FULL-STACK ENGINEERING</div><h1>Three projects. Three evidence trails.</h1><p>Repository retrieval. Document grounding. Source-aware change analysis.</p></div><div class="models"></div><div class="foot">ORIGINAL CODE-AUTHORED 3D MODELS <span style="float:right">INDEPENDENT PRODUCTS / NO SHARED PIPELINE</span></div>';
-const specs=[['codeforge','CodeForge AI','A layered repository, hybrid retrieval and commit-linked source evidence.'],['vericore','Vericore','A cutaway document, page-aware passages and an explicit unknown branch.'],['intervexa','Intervexa','A directed import graph, selected revision paths and advisory references.']];
-await Promise.all(specs.map(async([key,title,desc],i)=>{const d=document.createElement('div');d.className='model'+(key==='vericore'?' light':'');d.innerHTML=`<h2><span class="num">0${i+1}</span>${title}</h2><canvas></canvas><p>${desc}</p>`;sheet.querySelector('.models').append(d);await draw(d.querySelector('canvas'),key,{small:true});}));
+window.location.replace('./hero.html');
 }
 window.ready=true;
 </script></body></html>

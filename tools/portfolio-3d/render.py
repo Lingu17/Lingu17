@@ -19,9 +19,9 @@ def main():
             browser=p.chromium.launch(**options)
             page=browser.new_page(viewport={'width':1600,'height':900},device_scale_factor=1)
             for name in ['hero','codeforge','vericore','intervexa']:
-                page.goto(f'http://127.0.0.1:{server.server_address[1]}/index.html?project={name}')
+                page.goto(f'http://127.0.0.1:{server.server_address[1]}/hero.html' if name == 'hero' else f'http://127.0.0.1:{server.server_address[1]}/index.html?project={name}')
                 page.wait_for_function('window.ready===true',timeout=60000)
-                page.locator('#sheet').screenshot(path=str(args.output/f'{name}-project-model.png'))
+                page.locator('#hero' if name == 'hero' else '#sheet').screenshot(path=str(args.output/f'{name}-project-model.png'))
                 print('Rendered',name)
             browser.close()
     finally:server.shutdown();server.server_close()
