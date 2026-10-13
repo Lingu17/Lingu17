@@ -26,3 +26,16 @@ The browser is used only to build assets. The GitHub README contains no executab
 The profession-focused hero is defined separately in `hero.html` and `profession-models.js`; see `HERO-VERIFICATION.md` for its conceptual scope. Individual project scenes remain in `index.html` and `models.js`.
 
 The hero source uses a fluid aspect-ratio layout, viewport-scaled type and a resize-aware 3D camera. GitHub receives a static PNG that scales to the README width; it cannot run the interactive renderer. Verified at 1200px and 390px widths.
+
+## README images (current)
+
+- `profile.html` + `profile-model.js`: the header, an exploded view of storage, retrieval, generation and interface layers. File-block heights reuse `sourceCounts` from `models.js`; the rest is schematic.
+- `project.html` + `project-model.js`: the three project cards, built from the unchanged `builders` in `models.js`. Card copy lives in the `PROJECTS` object in `project.html`.
+- `stack.html` + `stack-model.js`: the tech-stack trays. Edit the `STACK` list in `stack.html` to change tools.
+- `sheet.css` (shared layout and type) and `fit.js` (fits an orthographic camera to a target rectangle).
+
+```sh
+python render-profile.py
+```
+
+This writes 20 PNGs to `assets/profile/`: `hero`, `codeforge`, `vericore`, `intervexa` and `stack`, each in `desktop` (1600 px wide at 1.5x) and `mobile` (800 px wide at 1.35x) layouts, `dark` and `light`. The README switches between them with `<picture>` media queries on viewport width (`max-width: 700px`) and `prefers-color-scheme`.

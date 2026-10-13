@@ -1,0 +1,44 @@
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:'Segoe UI',-apple-system,Arial,sans-serif}
+.sheet{position:relative;overflow:hidden;--ink:#f5f8fc;--sub:#a5b8cb;--muted:#71849a;--rule:#1d3349;--accent:#00c7e8;--blue:#3d86ff;
+  background:radial-gradient(ellipse 60% 70% at 66% 52%,#0d2036 0%,#081627 45%,#06121f 80%)}
+.sheet.light{--ink:#071827;--sub:#526b82;--muted:#71849a;--rule:#d4dfe9;--accent:#0866f5;--blue:#0866f5;
+  background:radial-gradient(ellipse 60% 70% at 66% 52%,#ffffff 0%,#f5f8fc 55%,#edf2f8 100%)}
+canvas{position:absolute;display:block}
+.mono{font-family:Consolas,ui-monospace,monospace}
+.tag{color:var(--accent);letter-spacing:.2em;font-weight:700}
+h1{color:var(--ink);font-weight:700;letter-spacing:-.035em;line-height:.98;margin:0}
+.lede{color:var(--sub);margin:0}
+dl{margin:0;border-top:1px solid var(--rule)}
+dl div{display:flex;border-bottom:1px solid var(--rule)}
+dt{color:var(--muted);letter-spacing:.14em;font-weight:700}
+dd{margin:0;color:var(--ink);font-weight:500}
+.foot{position:absolute;display:flex;justify-content:space-between;border-top:1px solid var(--rule);color:var(--muted)}
+.callout{position:absolute;transform:translateY(-50%);white-space:nowrap}
+.callout b{display:block;color:var(--ink);font-weight:600}
+.callout span{display:block;color:var(--sub)}
+.callout i{font-style:normal;color:var(--accent);letter-spacing:.12em;font-weight:700}
+svg.leaders{position:absolute;inset:0;pointer-events:none}
+
+/* Desktop: 1600 x 720 */
+.desktop{width:1600px;height:720px}
+.desktop canvas{left:0;top:0;width:1600px;height:720px}
+.desktop .copy{position:absolute;left:72px;top:72px;width:620px}
+.desktop .tag{font-size:15px;margin-bottom:26px}
+.desktop h1{font-size:90px}
+.desktop .lede{font-size:23px;line-height:1.45;margin:24px 0 30px;max-width:600px}
+.desktop dl div{padding:9px 0}.desktop dt{font-size:13px;width:118px;padding-top:4px}.desktop dd{font-size:19px}
+.desktop .foot{left:72px;right:72px;bottom:26px;padding-top:14px;font-size:14px}
+.desktop .callout b{font-size:21px}.desktop .callout span{font-size:16px;margin-top:3px}.desktop .callout i{font-size:13px}
+
+/* Mobile: 800 x 1240 */
+.mobile{width:800px;height:1240px}
+.mobile canvas{left:0;top:0;width:800px;height:1240px}
+.mobile .copy{position:absolute;left:52px;right:52px;top:64px}
+.mobile .tag{font-size:21px;margin-bottom:24px}
+.mobile h1{font-size:118px}
+.mobile .lede{font-size:33px;line-height:1.4;margin:26px 0 0}
+.mobile dl{position:absolute;left:52px;right:52px;top:930px}
+.mobile dl div{padding:13px 0}.mobile dt{font-size:18px;width:170px;padding-top:5px}.mobile dd{font-size:26px}
+.mobile .foot{left:52px;right:52px;bottom:30px;padding-top:16px;font-size:19px}
+.mobile .callout b{font-size:26px}.mobile .callout span{font-size:19px;margin-top:2px}.mobile .callout i{font-size:17px}

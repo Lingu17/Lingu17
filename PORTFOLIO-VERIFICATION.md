@@ -1,5 +1,20 @@
 # Project models and source verification
 
+## Current README images
+
+The README now uses the renders in `assets/profile/`, produced by `tools/portfolio-3d/render-profile.py` in desktop (1600 px) and mobile (800 px) layouts, each dark and light, selected with `<picture>` media queries.
+
+- **Header** (`profile.html`, `profile-model.js`): a schematic of the pattern shared by the three featured projects (storage, retrieval with rank fusion, generation behind an evidence gate, cited interface). Data-layer file heights reuse the CodeForge `sourceCounts` below; the interface text is illustrative, not a recorded session.
+- **Project cards** (`project.html`, `project-model.js`): the same `codeforge`, `vericore` and `intervexa` scene builders from `models.js`, unchanged, re-lit on a transparent canvas and framed by a fitted orthographic camera. The earlier `*-project-model.png` files and `index.html`/`render.py` remain for reference.
+- **Stack** (`stack.html`, `stack-model.js`): tools are listed only where a dependency file, import or source file in a public repository shows them.
+
+### Additional projects listed (checked 2026-10-13)
+
+- **Shishu-Sneh** @ `4b5332f`: `app/build.gradle.kts` declares Room and WorkManager; sources include Room DAOs and entities for babies, growth, vaccinations, milestones and activities, plus `FeedingReminderWorker` and `VaccinationReminderWorker`.
+- **Emotion-detiction-using-Text** @ `36e834e`: `emotion_app.py` is a Streamlit app that loads a Hugging Face `transformers` pipeline.
+- **Crop-recommendation-using-machine-learing** @ `1026ab3`: the notebook imports and evaluates scikit-learn classifiers including logistic regression, naive Bayes, SVC, k-NN, decision and extra trees, random forest, bagging, gradient boosting and AdaBoost. No accuracy figure is claimed.
+- **tourist-system** @ `364a4b4`: Flask backend (`backend/app.py`; `requirements.txt` lists flask, requests and gunicorn). The repository README describes geocoding, weather and attraction lookups.
+
 This revision gives each project its own geometry and composition. Models are authored in Three.js and rendered to static PNGs; no generated raster artwork is used. The models are explanatory software representations, not recorded queries, PR results or hardware.
 
 | Visual | Actual project | Verified code or workflow |
