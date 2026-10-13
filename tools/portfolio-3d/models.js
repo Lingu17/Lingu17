@@ -145,6 +145,8 @@ function intervexa(g){
   label(g,'selected revisions',2.0,.32,4.1,2.7,'#71849A',true,83);
 }
 
+export const builders={codeforge,vericore,intervexa};
+
 export async function draw(canvas,kind,{small=false}={}){
   const isDark=kind!=='vericore',scene=new T.Scene();scene.background=new T.Color(isDark?'#06121F':'#F5F8FC');
   const renderer=new T.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);renderer.setPixelRatio(2);renderer.outputColorSpace=T.SRGBColorSpace;

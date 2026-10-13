@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<link rel="stylesheet" href="sheet.css">
+<style>
+.desktop.flip .copy{left:auto;right:72px}
+.project h1{letter-spacing:-.03em}
+.desktop.project h1{font-size:74px;line-height:1.02}
+.mobile.project h1{font-size:76px;line-height:1.02}
+.desktop.project .lede{font-size:22px;max-width:560px}
+.mobile.project .lede{font-size:29px}
+.desktop.project dd{font-size:18px}
+.foot .live{color:var(--accent)}
+</style></head><body>
+<main id="sheet" class="sheet project"><canvas></canvas>
+<div class="copy"><div class="tag mono"></div><h1></h1><p class="lede"></p></div><dl></dl>
+<div class="foot mono"><span class="left"></span><span class="right"></span></div></main>
+<script type="module">
+import {drawProject} from './project-model.js';
+const q=new URLSearchParams(location.search),kind=q.get('project')||'codeforge',layout=q.get('layout')||'desktop',theme=q.get('theme')||'dark';
+const PROJECTS={
+  codeforge:{n:'01',name:'CODEFORGE AI',title:'Ask a repository.<br>Get the exact lines.',
+    lede:'Vector and lexical search over line-aware chunks, merged with reciprocal-rank fusion. Every reference links to a file and line range at the scanned commit.',
+    rows:[['RETRIEVAL','Vector + lexical, rank fusion'],['CITES','File and line range at the commit'],['STACK','Next.js · FastAPI · Supabase · Gemini · Groq'],['LIVE','codeforage-ai.vercel.app']],
+    note:'File heights follow inspected source lengths.'},
+  vericore:{n:'02',name:'VERICORE',title:'No evidence,<br>no answer.',flip:true,
+    lede:'Passages keep their page and section. Retrieval scores similarity plus lexical coverage, and a relevance gate decides what reaches the model.',
+    rows:[['RETRIEVAL','Cosine + lexical coverage, gated'],['CITES','Document, page and section'],['STACK','React · FastAPI · ChromaDB · Groq'],['FAILS SAFE','No evidence, no LLM call']],
+    note:'No qualifying evidence → no LLM call.'},
+  intervexa:{n:'03',name:'INTERVEXA',title:'Read the graph.<br>Check the change.',
+    lede:'Python declarations and imports at a pinned revision, plus pull-request comparisons of signatures, shared identifiers and response keys.',
+    rows:[['GRAPH','AST declarations, import matches'],['COMPARES','Signatures · identifiers · response keys'],['STACK','Next.js · R3F · FastAPI · PostgreSQL'],['LIVE','intervexa-three.vercel.app']],
+    note:'Source relationships, not a resolved call graph.'},
+};
+const p=PROJECTS[kind],sheet=document.querySelector('#sheet'),D=layout==='desktop';
+sheet.classList.add(layout,theme);if(p.flip)sheet.classList.add('flip');
+sheet.querySelector('.tag').textContent=`${p.n} / ${p.name}`;
+sheet.querySelector('h1').innerHTML=p.title;sheet.querySelector('.lede').textContent=p.lede;
+const dl=sheet.querySelector('dl');
+for(const[k,v]of p.rows){const row=document.createElement('div');row.innerHTML=`<dt class="mono">${k}</dt><dd>${v}</dd>`;dl.append(row);}
+if(D)sheet.querySelector('.copy').append(dl);
+sheet.querySelector('.foot .left').textContent=`LINGRAJ MALIPATIL · ${p.n} / 03`;
+sheet.querySelector('.foot .right').textContent=D?p.note:'';
+// Target rectangle for the scene, in sheet pixels: [x, y, w, h].
+// On mobile the scene fills whatever space the copy leaves above the facts list.
+const copyBottom=sheet.querySelector('.copy').getBoundingClientRect().bottom,dlTop=dl.getBoundingClientRect().top;
+const target=D?(p.flip?[50,60,820,560]:[740,60,800,560]):[30,copyBottom+28,740,dlTop-copyBottom-56];
+await drawProject(sheet.querySelector('canvas'),{kind,theme,target});
+window.ready=true;
+</script></body></html>

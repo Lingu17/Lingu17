@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<link rel="stylesheet" href="sheet.css"></head><body>
+<main id="sheet" class="sheet"><canvas></canvas><svg class="leaders"></svg>
+<div class="copy">
+  <div class="tag mono">AI ENGINEER / FULL-STACK ENGINEER</div>
+  <h1>Lingraj<br>Malipatil</h1>
+  <p class="lede">I build AI systems that show their work: answers cite the file, line or page they came from.</p>
+</div>
+<dl>
+  <div><dt class="mono">BASED IN</dt><dd>Bengaluru, India</dd></div>
+  <div><dt class="mono">FOCUS</dt><dd>RAG · LLM systems · developer tools</dd></div>
+  <div><dt class="mono">STACK</dt><dd>Python · TypeScript · FastAPI · React</dd></div>
+  <div><dt class="mono">OPEN TO</dt><dd>AI engineering and full-stack roles</dd></div>
+</dl>
+<div class="foot mono"><span>LINGRAJ MALIPATIL</span><span class="note">File heights follow source line counts, codeforage-ai @ 62d8979</span></div>
+</main>
+<script type="module">
+import {drawProfile} from './profile-model.js';
+const q=new URLSearchParams(location.search),layout=q.get('layout')||'desktop',theme=q.get('theme')||'dark';
+const sheet=document.querySelector('#sheet');sheet.classList.add(layout,theme);
+if(layout==='desktop'){sheet.querySelector('.copy').append(sheet.querySelector('dl'));}
+else{sheet.querySelector('.note').textContent='codeforage-ai @ 62d8979';}
+const parts=[['Storage','PostgreSQL · ChromaDB'],['Retrieval','Vector + lexical → RRF'],
+  ['Generation','Evidence gate → LLM'],['Interface',layout==='desktop'?'React · Next.js · TypeScript':'React · Next.js']];
+// Target rectangle for the 3D assembly, in sheet pixels: [x, y, w, h].
+const target=layout==='desktop'?[700,40,560,600]:[22,486,470,416];
+const anchors=await drawProfile(sheet.querySelector('canvas'),{theme,target});
+const svg=sheet.querySelector('svg.leaders'),colX=Math.max(...anchors.map(a=>a.x))+(layout==='desktop'?72:40),ns='http://www.w3.org/2000/svg';
+svg.setAttribute('viewBox',`0 0 ${sheet.clientWidth} ${sheet.clientHeight}`);
+anchors.forEach((a,i)=>{
+  const line=document.createElementNS(ns,'path');line.setAttribute('d',`M${a.x+6},${a.y} H${colX-14}`);
+  line.setAttribute('stroke','var(--muted)');line.setAttribute('stroke-dasharray','2 5');line.setAttribute('fill','none');svg.append(line);
+  const dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',a.x+2);dot.setAttribute('cy',a.y);dot.setAttribute('r',layout==='desktop'?3.5:4.5);
+  dot.setAttribute('fill','var(--accent)');svg.append(dot);
+  const el=document.createElement('div');el.className='callout';el.style.left=colX+'px';el.style.top=a.y+'px';
+  el.innerHTML=`<i class="mono">0${i+1}</i><b>${parts[i][0]}</b><span>${parts[i][1]}</span>`;sheet.append(el);
+});
+window.ready=true;
+</script></body></html>

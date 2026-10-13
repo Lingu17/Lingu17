@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<style>
+*{box-sizing:border-box}html,body{margin:0}
+.sheet{position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 90% at 50% 45%,#0b1c30 0%,#081627 50%,#06121f 85%)}
+.sheet.light{background:radial-gradient(ellipse 70% 90% at 50% 45%,#ffffff 0%,#f5f8fc 60%,#edf2f8 100%)}
+canvas{display:block}
+</style></head><body><main id="sheet" class="sheet"><canvas></canvas></main>
+<script type="module">
+import {drawStack} from './stack-model.js';
+const q=new URLSearchParams(location.search),layout=q.get('layout')||'desktop',theme=q.get('theme')||'dark';
+// Desktop: one row per category. Mobile: rows balanced for a narrow column.
+const STACK=[
+  ['AI & RETRIEVAL',[['Python','RAG pipelines','Gemini API'],['Groq','ChromaDB','Sentence-Transformers']]],
+  ['MACHINE LEARNING',[['scikit-learn','HF Transformers','pandas'],['Streamlit','Jupyter']]],
+  ['BACKEND',[['FastAPI','Pydantic','PostgreSQL'],['Supabase','SQLAlchemy','Docker']]],
+  ['FRONTEND & MOBILE',[['TypeScript','React','Next.js'],['Tailwind CSS','Three.js','Kotlin']]],
+  ['QUALITY & DELIVERY',[['pytest','Playwright','Ruff'],['Git','Vercel']]],
+];
+const categories=layout==='desktop'?STACK.map(([n,rows])=>[n,[rows.flat()]]):STACK;
+const sheet=document.querySelector('#sheet');sheet.classList.add(theme);
+const width=layout==='desktop'?1600:800;sheet.style.width=width+'px';
+const height=await drawStack(sheet.querySelector('canvas'),{theme,categories,layout,width,margin:layout==='desktop'?[56,34]:[34,40]});
+sheet.style.height=height+'px';
+window.ready=true;
+</script></body></html>
