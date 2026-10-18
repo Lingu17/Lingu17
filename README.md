@@ -42,7 +42,7 @@ Next.js · TypeScript · FastAPI · Supabase (Postgres) · Gemini embeddings · 
 </picture>
 </a>
 
-**Document Q&A that refuses to guess.** [Source](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence)
+**Document Q&A that refuses to guess.** [Live demo](https://vericore-evidence.onrender.com) · [Source](https://github.com/Lingu17/Vericore---Evidence-First-Document-Intelligence)
 
 PDF and text files are chunked with their page and section metadata and indexed in ChromaDB. Candidates are scored on semantic similarity plus lexical coverage, then pass a relevance gate. If nothing qualifies, the API returns *"Information not available in the uploaded documents."* without calling the LLM, so a question the documents can't support never reaches the model.
 
@@ -74,9 +74,11 @@ Next.js · TypeScript · React Three Fiber · FastAPI · SQLAlchemy · PostgreSQ
 **AI and full-stack**
 
 - **[Nexvio](https://github.com/Lingu17/nexvio)**: interview-video and posture-analysis services with queued processing and task-status endpoints. TypeScript · Python · [Demo](https://nexvio-snowy.vercel.app)
+- **[MergeProof](https://github.com/Lingu17/MergeProof)**: runs two individually passing Git changes and their combined merge in isolated clones, and reports a confirmed interaction only with assertion evidence. Python · Git · Docker
+- **[Sales Analytics](https://github.com/Lingu17/Sales-Analytics)**: React and Convex dashboard with reactive queries, year and revenue filters and switchable charts. TypeScript · Convex · [Demo](https://admired-meadowlark-784.convex.app)
 - **[EchoVault AI](https://github.com/Lingu17/ai-chat-app-saved-history)**: React chat app with browser-local history and a serverless model API route. React · JavaScript · [Demo](https://ai-chat-app-saved-history.vercel.app)
-- **[Smart Resume AI](https://github.com/Lingu17/Smart-Resume-AI)**: extracts text from PDF/DOCX resumes and returns structured suggestions. Python · Flask · Groq
-- **[Smart Trip Planner](https://github.com/Lingu17/tourist-system)**: plans a trip from a plain-language request using open geocoding, weather and attractions data. Python · Flask
+- **[Smart Resume AI](https://github.com/Lingu17/Smart-Resume-AI)**: extracts text from PDF/DOCX resumes and returns structured suggestions. Python · Flask · Groq · [Demo](https://smart-resume-ai-1-vr5g.onrender.com/)
+- **[Smart Trip Planner](https://github.com/Lingu17/tourist-system)**: plans a trip from a plain-language request using open geocoding, weather and attractions data. Python · Flask · [Demo](https://tourist-system.onrender.com)
 
 **Android**
 
