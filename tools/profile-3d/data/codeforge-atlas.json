@@ -1,0 +1,277 @@
+{
+ "revision": "62d8979626ad379ca2727135f3da68775ec2cde8",
+ "files": [
+  {
+   "path": "backend/ai_groq.py",
+   "module": "ai_groq",
+   "bytes": 6376,
+   "lines": 175
+  },
+  {
+   "path": "backend/config.py",
+   "module": "config",
+   "bytes": 2326,
+   "lines": 51
+  },
+  {
+   "path": "backend/database.py",
+   "module": "database",
+   "bytes": 1353,
+   "lines": 34
+  },
+  {
+   "path": "backend/embedding.py",
+   "module": "embedding",
+   "bytes": 2848,
+   "lines": 79
+  },
+  {
+   "path": "backend/github_client.py",
+   "module": "github_client",
+   "bytes": 1820,
+   "lines": 38
+  },
+  {
+   "path": "backend/main.py",
+   "module": "main",
+   "bytes": 45064,
+   "lines": 963
+  },
+  {
+   "path": "backend/observability.py",
+   "module": "observability",
+   "bytes": 2964,
+   "lines": 65
+  },
+  {
+   "path": "backend/pr_review.py",
+   "module": "pr_review",
+   "bytes": 1977,
+   "lines": 45
+  },
+  {
+   "path": "backend/quality.py",
+   "module": "quality",
+   "bytes": 6901,
+   "lines": 107
+  },
+  {
+   "path": "backend/rag.py",
+   "module": "rag",
+   "bytes": 2002,
+   "lines": 40
+  },
+  {
+   "path": "backend/reporting.py",
+   "module": "reporting",
+   "bytes": 1891,
+   "lines": 41
+  },
+  {
+   "path": "backend/scan_recovery.py",
+   "module": "scan_recovery",
+   "bytes": 1662,
+   "lines": 33
+  },
+  {
+   "path": "backend/scanner.py",
+   "module": "scanner",
+   "bytes": 50374,
+   "lines": 1120
+  },
+  {
+   "path": "backend/schema_check.py",
+   "module": "schema_check",
+   "bytes": 1381,
+   "lines": 34
+  },
+  {
+   "path": "backend/tests/conftest.py",
+   "module": "tests.conftest",
+   "bytes": 492,
+   "lines": 16
+  },
+  {
+   "path": "backend/tests/test_chat_stream.py",
+   "module": "tests.test_chat_stream",
+   "bytes": 5056,
+   "lines": 92
+  },
+  {
+   "path": "backend/tests/test_github_listing.py",
+   "module": "tests.test_github_listing",
+   "bytes": 7156,
+   "lines": 139
+  },
+  {
+   "path": "backend/tests/test_regressions.py",
+   "module": "tests.test_regressions",
+   "bytes": 20648,
+   "lines": 411
+  },
+  {
+   "path": "backend/tests/test_reporting.py",
+   "module": "tests.test_reporting",
+   "bytes": 1666,
+   "lines": 34
+  },
+  {
+   "path": "backend/tests/test_secret_safety.py",
+   "module": "tests.test_secret_safety",
+   "bytes": 2588,
+   "lines": 64
+  },
+  {
+   "path": "backend/validation.py",
+   "module": "validation",
+   "bytes": 809,
+   "lines": 19
+  }
+ ],
+ "edges": [
+  {
+   "from": "main",
+   "to": "config"
+  },
+  {
+   "from": "main",
+   "to": "validation"
+  },
+  {
+   "from": "main",
+   "to": "observability"
+  },
+  {
+   "from": "main",
+   "to": "rag"
+  },
+  {
+   "from": "main",
+   "to": "pr_review"
+  },
+  {
+   "from": "main",
+   "to": "schema_check"
+  },
+  {
+   "from": "main",
+   "to": "scan_recovery"
+  },
+  {
+   "from": "main",
+   "to": "github_client"
+  },
+  {
+   "from": "main",
+   "to": "reporting"
+  },
+  {
+   "from": "main",
+   "to": "database"
+  },
+  {
+   "from": "main",
+   "to": "scanner"
+  },
+  {
+   "from": "main",
+   "to": "ai_groq"
+  },
+  {
+   "from": "scanner",
+   "to": "database"
+  },
+  {
+   "from": "scanner",
+   "to": "validation"
+  },
+  {
+   "from": "scanner",
+   "to": "reporting"
+  },
+  {
+   "from": "scanner",
+   "to": "embedding"
+  },
+  {
+   "from": "scanner",
+   "to": "quality"
+  },
+  {
+   "from": "schema_check",
+   "to": "database"
+  },
+  {
+   "from": "tests.test_chat_stream",
+   "to": "main"
+  },
+  {
+   "from": "tests.test_chat_stream",
+   "to": "ai_groq"
+  },
+  {
+   "from": "tests.test_github_listing",
+   "to": "main"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "main"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "scanner"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "embedding"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "validation"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "quality"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "rag"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "config"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "pr_review"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "ai_groq"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "database"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "schema_check"
+  },
+  {
+   "from": "tests.test_regressions",
+   "to": "scan_recovery"
+  },
+  {
+   "from": "tests.test_reporting",
+   "to": "reporting"
+  },
+  {
+   "from": "tests.test_secret_safety",
+   "to": "config"
+  },
+  {
+   "from": "tests.test_secret_safety",
+   "to": "database"
+  }
+ ]
+}

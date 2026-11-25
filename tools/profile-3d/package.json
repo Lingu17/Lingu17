@@ -1,0 +1,14 @@
+{
+  "name": "profile-3d",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "three": "0.185.0"
+  },
+  "devDependencies": {
+    "puppeteer-core": "24.10.0"
+  }
+}
