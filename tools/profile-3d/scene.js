@@ -613,7 +613,7 @@ if (VIEW !== "button") {
         for (let z = -1; z <= 1; z++) {
           const pop = r() < 0.22 ? 0.35 : 0;
           const lit = x === 1 && y === 1 && z === 1;
-          add(box(0.92, 0.92, 0.92, 0.14), lit ? glow(2.2) : mat(r() < 0.5 ? C.white : r() < 0.5 ? C.mid : C.graphite, { roughness: 0.3 }), [x * (1.04 + pop), y * 1.04, z * (1.04 + pop * 0.5)], g);
+          add(box(0.92, 0.92, 0.92, 0.14), lit ? glow(1.3) : mat(r() < 0.5 ? C.white : r() < 0.5 ? C.mid : C.graphite, { roughness: 0.3 }), [x * (1.04 + pop), y * 1.04, z * (1.04 + pop * 0.5)], g);
         }
     g.rotation.set(0.5, -0.7, 0);
     scene.fog = null;
@@ -623,7 +623,19 @@ if (VIEW !== "button") {
     };
   }
 
-  const make = { hero, ledgerline, codeforge, intervexa, vericore, toolkit }[VIEW];
+  /* ---------------------------------------------------------------- avatar: the same block, alone */
+
+  function avatar() {
+    const update = toolkit();
+    scene.fog = null;
+    const cam = aim([0, 0.4, 16], [0, 0, 0], 30);
+    return (t) => {
+      update(t);
+      cam(t);
+    };
+  }
+
+  const make = { hero, ledgerline, codeforge, intervexa, vericore, toolkit, avatar }[VIEW];
   window.__scene = (async () => {
     update = await make();
   })();

@@ -35,6 +35,7 @@ const JOBS = [
     { name: `${v}-desktop`, view: v, layout: "desktop", w: 1600, h: 720, fps: 12, seconds: 6 },
     { name: `${v}-mobile`, view: v, layout: "mobile", w: 1080, h: 1640, fps: 12, seconds: 6 },
   ]),
+  { name: "avatar", view: "avatar", layout: "desktop", w: 1000, h: 1000, still: 0.25 },
   { name: "toolkit-desktop", view: "toolkit", layout: "desktop", w: 1600, h: 1600, still: 0.25, element: true },
   { name: "toolkit-mobile", view: "toolkit", layout: "mobile", w: 1080, h: 3600, still: 0.25, element: true },
   ...Object.keys(BUTTONS).map((b) => ({ name: `button-${b}`, view: "button", b, layout: "desktop", w: 800, h: 200, still: 0, element: true })),

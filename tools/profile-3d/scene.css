@@ -702,3 +702,13 @@ ul {
 .view-button.primary .btn i {
   color: #160802;
 }
+
+/* ---------------------------------------------------------------- avatar (GitHub crops it to a circle) */
+
+.view-avatar #card {
+  border-radius: 0;
+}
+
+.view-avatar #card::after {
+  display: none;
+}
